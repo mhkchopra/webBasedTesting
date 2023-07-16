@@ -33,7 +33,7 @@ public class TestCase3 extends BaseClass {
 
                     //Going to cart page
                     driver.findElement(By.xpath("//*[@id=\"nav-cart\"]/a")).click();
-                    Thread.sleep(150);
+                    Thread.sleep(180);
 
                     //Finding Sub-total elements of each product
                     WebElement stuffedBunnySubTotal = driver.findElement(By.xpath("/html/body/div[2]/div/form/table/tbody/tr[1]/td[4]"));
@@ -47,12 +47,12 @@ public class TestCase3 extends BaseClass {
                     Double subTotalVB = 44.97;
 
                     //Validating the actual and expected subtotal
-                    String expectedSubTotalSB = stuffedBunnySubTotal.getText();
+                    String expectedSubTotalSF = stuffedBunnySubTotal.getText();
                     String expectedSubTotalFB = fluffyBunnySubTotal.getText();
                     String expectedSubTotalVB = valentineBearSubTotal.getText();
 
 
-                    Assert.assertEquals("$"+subTotalSF, expectedSubTotalSB);
+                    Assert.assertEquals("$"+subTotalSF, expectedSubTotalSF);
                     Assert.assertEquals("$"+subTotalFB, expectedSubTotalFB);
                     Assert.assertEquals("$"+subTotalVB, expectedSubTotalVB);
 
