@@ -16,8 +16,6 @@ public class TestCase2 extends BaseClass {
                 {
                     // Perform actions with the WebDriver
                     driver.get("http://jupiter.cloud.planittesting.com");
-                    System.out.println("Page title: " + driver.getTitle());
-
 
                     driver.findElement(By.xpath("//*[@id=\"nav-contact\"]/a")).click();
 

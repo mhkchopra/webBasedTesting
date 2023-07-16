@@ -11,7 +11,6 @@ public class TestCase3 extends BaseClass {
                 {
                     // Perform actions with the WebDriver
                     driver.get("https://jupiter.cloud.planittesting.com/#/shop");
-                    System.out.println("Page title: " + driver.getTitle());
 
                     //Buying 2 Stuffed frog
                     driver.findElement(By.xpath("//*[@id=\"product-2\"]/div/p/a")).click();
@@ -48,14 +47,14 @@ public class TestCase3 extends BaseClass {
                     Double subTotalVB = 44.97;
 
                     //Validating the actual and expected subtotal
-                    String expectedErrorText1 = stuffedBunnySubTotal.getText();
-                    String expectedErrorText2 = fluffyBunnySubTotal.getText();
-                    String expectedErrorText3 = valentineBearSubTotal.getText();
+                    String expectedSubTotalSB = stuffedBunnySubTotal.getText();
+                    String expectedSubTotalFB = fluffyBunnySubTotal.getText();
+                    String expectedSubTotalVB = valentineBearSubTotal.getText();
 
 
-                    Assert.assertEquals("$"+subTotalSF, expectedErrorText1);
-                    Assert.assertEquals("$"+subTotalFB, expectedErrorText2);
-                    Assert.assertEquals("$"+subTotalVB, expectedErrorText3);
+                    Assert.assertEquals("$"+subTotalSF, expectedSubTotalSB);
+                    Assert.assertEquals("$"+subTotalFB, expectedSubTotalFB);
+                    Assert.assertEquals("$"+subTotalVB, expectedSubTotalVB);
 
                     System.out.println("Test case 3.3 Successfully Verified SubTotal of each product");
 
@@ -86,16 +85,13 @@ public class TestCase3 extends BaseClass {
                     System.out.println("Test case 3.4 Successfully Verified Price of each product");
 
                     WebElement total = driver.findElement(By.xpath("/html/body/div[2]/div/form/table/tfoot/tr[1]/td/strong"));
-                    Thread.sleep(3000);
-
 
                     Double sum = subTotalSF+subTotalFB+subTotalVB;
 
-                    System.out.println(sum);
-                    System.out.println(total);
-                    Thread.sleep(3000);
+                    Assert.assertEquals("Total: "+ sum, total.getText());
 
-                    Assert.assertEquals( sum, total.getText());
+                    System.out.println("Test case 3.5 Successfully Verified Total");
+
                     //Close the browser and quit the WebDriver
                     driver.quit();
 
