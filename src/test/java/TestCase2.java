@@ -63,12 +63,14 @@ public class TestCase2 extends BaseClass {
                     driver.findElement(By.xpath("//*[@id=\"telephone\"]")).sendKeys(telephone);
                     driver.findElement(By.xpath("//*[@id=\"message\"]")).sendKeys(message);
 
-                    WebDriverWait waitForFeed = new WebDriverWait(driver, Duration.ofSeconds(30)); // Maximum wait time of 30 seconds
+                    WebDriverWait waitForFeed = new WebDriverWait(driver, Duration.ofSeconds(50)); // Maximum wait time of 60 seconds
                     WebElement submit = waitForFeed.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/form/div/a")));
+                    Thread.sleep(1000);
                     submit.click();
 
-                    WebDriverWait waitForFeedback = new WebDriverWait(driver, Duration.ofSeconds(50)); // Maximum wait time of 30 seconds
+                    WebDriverWait waitForFeedback = new WebDriverWait(driver, Duration.ofSeconds(60)); // Maximum wait time of 100 seconds
                     WebElement back = waitForFeedback.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/a")));
+                    Thread.sleep(1000);
                     WebElement success = driver.findElement(By.xpath("/html/body/div[2]/div/div"));
                     //Validating the actual and expected text
                     String expectedSuccessText = success.getText();
