@@ -2,6 +2,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,7 +12,9 @@ import java.io.FileInputStream;
 import java.time.Duration;
 
 public class TestCase2 extends BaseClass {
-    public static void main(String[] args) {
+
+    @Test
+    public void testMethod2() {
         initializeWebDriver();
         try {
             {

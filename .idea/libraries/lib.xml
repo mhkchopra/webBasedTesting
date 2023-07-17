@@ -3,9 +3,11 @@
     <CLASSES>
       <root url="file://$USER_HOME$/Downloads/selenium-java-4.10.0/lib" />
       <root url="jar://$USER_HOME$/Downloads/poi-5.2.3.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Maven" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../Program Files/Maven" recursive="false" />
     <jarDirectory url="file://$USER_HOME$/Downloads/selenium-java-4.10.0/lib" recursive="false" />
   </library>
 </component>

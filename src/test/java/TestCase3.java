@@ -1,10 +1,13 @@
 import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 
 public class TestCase3 extends BaseClass {
-    public static void main(String[] args) {
+
+    @Test
+    public void testMethod3() {
         initializeWebDriver();
 
         try {
