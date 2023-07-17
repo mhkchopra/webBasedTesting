@@ -54,7 +54,6 @@ public class TestCase3 extends BaseClass {
                 String expectedSubTotalFB = fluffyBunnySubTotal.getText();
                 String expectedSubTotalVB = valentineBearSubTotal.getText();
 
-
                 Assert.assertEquals("$" + subTotalSF, expectedSubTotalSF);
                 Assert.assertEquals("$" + subTotalFB, expectedSubTotalFB);
                 Assert.assertEquals("$" + subTotalVB, expectedSubTotalVB);
@@ -68,7 +67,6 @@ public class TestCase3 extends BaseClass {
                 WebElement fluffyBunnyPrice = driver.findElement(By.xpath("/html/body/div[2]/div/form/table/tbody/tr[2]/td[2]"));
                 WebElement valentineBearPrice = driver.findElement(By.xpath("/html/body/div[2]/div/form/table/tbody/tr[3]/td[2]"));
 
-
                 //Expected price Values
                 double priceSF = 10.99;
                 double priceFB = 9.99;
@@ -79,11 +77,9 @@ public class TestCase3 extends BaseClass {
                 String expectedPriceFB = fluffyBunnyPrice.getText();
                 String expectedPriceVB = valentineBearPrice.getText();
 
-
                 Assert.assertEquals("$" + priceSF, expectedPriceSF);
                 Assert.assertEquals("$" + priceFB, expectedPriceFB);
                 Assert.assertEquals("$" + priceVB, expectedPriceVB);
-
 
                 System.out.println("Test case 3.4 Successfully Verified Price of each product");
 
@@ -97,7 +93,6 @@ public class TestCase3 extends BaseClass {
 
                 //Close the browser and quit the WebDriver
                 driver.quit();
-
             }
 
         } catch (Exception e) {

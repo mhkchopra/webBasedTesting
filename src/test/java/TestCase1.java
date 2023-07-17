@@ -28,10 +28,7 @@ public class TestCase1 extends BaseClass {
 
                 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15)); // Maximum wait time of 15 seconds
                 WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/form/div/a")));
-
-
                 element.click();
-
 
                 WebElement forenameErrMessage = driver.findElement(By.xpath("//*[@id=\"forename-err\"]"));
 
@@ -43,18 +40,14 @@ public class TestCase1 extends BaseClass {
 
                 System.out.println("Test case 1.3.1 Successfully Verified error message for Field Forename");
 
-
                 WebElement emailErrMessage = driver.findElement(By.xpath("//*[@id=\"email-err\"]"));
 
                 //Validating the actual and expected text
                 String expectedEmailErrorText = "Email is required";
-
                 String actualEmailErrorText = emailErrMessage.getText();
 
                 Assert.assertEquals(actualEmailErrorText, expectedEmailErrorText);
-
                 System.out.println("Test case 1.3.2 Successfully Verified error message for Field Email");
-
 
                 WebElement messageErrMessage = driver.findElement(By.xpath("//*[@id=\"message-err\"]"));
 
@@ -62,11 +55,8 @@ public class TestCase1 extends BaseClass {
                 String expectedMessageErrorText = "Message is required";
                 String actualMessageErrorText = messageErrMessage.getText();
 
-
                 Assert.assertEquals(actualMessageErrorText, expectedMessageErrorText);
-
                 System.out.println("Test case 1.3.3 Successfully Verified error message for Field Message");
-
 
                 //Defining excel path
                 String excelFilePath = ".\\dataFile\\contactSheet.xlsx";
@@ -76,9 +66,8 @@ public class TestCase1 extends BaseClass {
                 XSSFWorkbook workbook = new XSSFWorkbook(Inputstream);
                 XSSFSheet sheet = workbook.getSheet("Sheet1");
 
-                //Reading rows a
+                //Reading rows
                 int rows = sheet.getLastRowNum();
-
                 for (int r = 4; r <= rows; r++) {
                     XSSFRow row = sheet.getRow(r);
                     String forename = row.getCell(0).getStringCellValue();
@@ -97,19 +86,15 @@ public class TestCase1 extends BaseClass {
                     Thread.sleep(3000);
                     driver.findElement(By.xpath("/html/body/div[2]/div/form/div/a")).click();
 
-                    WebDriverWait waitForFeedback = new WebDriverWait(driver, Duration.ofSeconds(15)); // Maximum wait time of 8 seconds
+                    WebDriverWait waitForFeedback = new WebDriverWait(driver, Duration.ofSeconds(15)); // Maximum wait time of 15 seconds
                     WebElement back = waitForFeedback.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/a")));
 
                     back.click();
-
                 }
-
                 System.out.println("Test case 1.5 - With success submission, Validating Errors are gone");
 
                 //Close the browser and quit the WebDriver
                 driver.quit();
-
-
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -63,12 +63,12 @@ public class TestCase2 extends BaseClass {
                     driver.findElement(By.xpath("//*[@id=\"telephone\"]")).sendKeys(telephone);
                     driver.findElement(By.xpath("//*[@id=\"message\"]")).sendKeys(message);
 
-                    WebDriverWait waitForFeed = new WebDriverWait(driver, Duration.ofSeconds(50)); // Maximum wait time of 60 seconds
-                    WebElement submit = waitForFeed.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/form/div/a")));
-                    Thread.sleep(1000);
-                    submit.click();
+                    //waiting for submit button and perform click operation
+                   Thread.sleep(2000);
+                   driver.findElement(By.xpath("/html/body/div[2]/div/form/div/a")).click();
 
-                    WebDriverWait waitForFeedback = new WebDriverWait(driver, Duration.ofSeconds(60)); // Maximum wait time of 100 seconds
+                   //Waiting for back button to appear after successfull submission
+                    WebDriverWait waitForFeedback = new WebDriverWait(driver, Duration.ofSeconds(30)); // Maximum wait time of 30 seconds
                     WebElement back = waitForFeedback.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/a")));
                     Thread.sleep(1000);
                     WebElement success = driver.findElement(By.xpath("/html/body/div[2]/div/div"));
@@ -78,9 +78,7 @@ public class TestCase2 extends BaseClass {
 
                     //Validating if success message contains below text
                     Assert.assertTrue(expectedSuccessText.contains("we appreciate your feedback"));
-
                     back.click();
-
                 }
                 //Close the browser and quit the WebDriver
                 driver.quit();
