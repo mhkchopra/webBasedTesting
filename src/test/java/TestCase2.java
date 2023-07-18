@@ -81,7 +81,7 @@ public class TestCase2 extends BaseClass {
                     back.click();
                 }
                 //Close the browser and quit the WebDriver
-                driver.quit();
+                closeWebDriver();
             }
         } catch (Exception e) {
             e.printStackTrace();

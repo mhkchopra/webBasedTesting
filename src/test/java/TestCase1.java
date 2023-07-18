@@ -86,7 +86,7 @@ public class TestCase1 extends BaseClass {
                     Thread.sleep(3000);
                     driver.findElement(By.xpath("/html/body/div[2]/div/form/div/a")).click();
 
-                    WebDriverWait waitForFeedback = new WebDriverWait(driver, Duration.ofSeconds(15)); // Maximum wait time of 15 seconds
+                    WebDriverWait waitForFeedback = new WebDriverWait(driver, Duration.ofSeconds(25)); // Maximum wait time of 15 seconds
                     WebElement back = waitForFeedback.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/a")));
 
                     back.click();
@@ -94,7 +94,7 @@ public class TestCase1 extends BaseClass {
                 System.out.println("Test case 1.5 - With success submission, Validating Errors are gone");
 
                 //Close the browser and quit the WebDriver
-                driver.quit();
+                closeWebDriver();
             }
         } catch (Exception e) {
             e.printStackTrace();

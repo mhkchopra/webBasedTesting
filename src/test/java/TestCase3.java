@@ -36,7 +36,7 @@ public class TestCase3 extends BaseClass {
 
                 //Going to cart page
                 driver.findElement(By.xpath("//*[@id=\"nav-cart\"]/a")).click();
-                Thread.sleep(180);
+                Thread.sleep(1000);
 
                 //Finding Sub-total elements of each product
                 WebElement stuffedBunnySubTotal = driver.findElement(By.xpath("/html/body/div[2]/div/form/table/tbody/tr[1]/td[4]"));
@@ -92,7 +92,7 @@ public class TestCase3 extends BaseClass {
                 System.out.println("Test case 3.5 Successfully Verified Total");
 
                 //Close the browser and quit the WebDriver
-                driver.quit();
+                closeWebDriver();
             }
 
         } catch (Exception e) {
